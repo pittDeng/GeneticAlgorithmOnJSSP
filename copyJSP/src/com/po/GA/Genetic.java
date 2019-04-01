@@ -1,7 +1,8 @@
-package com.po;
+package com.po.GA;
 
-import java.awt.*;
-import java.lang.reflect.Field;
+import com.po.Code;
+import com.po.Parameter;
+
 import java.util.Random;
 
 public class Genetic {
@@ -129,7 +130,7 @@ public class Genetic {
     //在调用这个函数之前必须要将Solution[] pop进行从大到小的顺序排列
     private void calPossibility(){
         clearPossibility();
-        double sumOfJudge=Function.sumOfJudge(pop);
+        double sumOfJudge= Function.sumOfJudge(pop);
         double sum=0;
         for(int i=0;i<pop.length;++i){
             sum+=pop[i].judge;

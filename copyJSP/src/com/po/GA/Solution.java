@@ -1,4 +1,5 @@
-package com.po;
+package com.po.GA;
+
 
 public class Solution {
     public static int length=0;

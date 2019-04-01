@@ -1,4 +1,6 @@
-package com.po;
+package com.po.GA;
+
+import com.po.GA.Solution;
 
 public abstract class Function {
     public static int minOfArray(int [] arr){
@@ -16,7 +18,7 @@ public abstract class Function {
         return max;
     }
     //求Solution [] pop中judge值的和
-    public static double sumOfJudge(Solution [] pop){
+    public static double sumOfJudge(Solution[] pop){
         double res=0;
         for(int i=0;i<pop.length;++i){
             res+=pop[i].judge;
