@@ -4,8 +4,6 @@ import java.util.Random;
 
 public abstract class Chromosome implements Cloneable{
     protected int [] code;
-
-
     @Override
     protected Object clone() throws CloneNotSupportedException {
         Chromosome res=null;

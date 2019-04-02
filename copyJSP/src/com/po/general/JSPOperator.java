@@ -1,19 +1,15 @@
 package com.po.general;
 
 import com.po.Code;
+import java.util.*;
 
-import java.util.Random;
-import java.util.Vector;
-
-public class JSPOperator {
+public class JSPOperator extends Operator{
     protected int []alreadyAddNum;
-    private int cLength;
-    protected Random random=new Random();
     private int OperationForEachJob;
-    private Func func;
-    public JSPOperator (int cLength,int OperationForEachJob){
+
+    public JSPOperator (int cLength,int OperationForEachJob,Func func){
+        super(cLength,func);
         this.OperationForEachJob=OperationForEachJob;
-        this.cLength=cLength;
         if(cLength<5){
             System.out.println("染色体长度必须大于4");
             System.exit(0);
@@ -41,58 +37,9 @@ public class JSPOperator {
         }
         return offspring;
     }
-    private void PathRelinking(int[] c1,int[] opt) {
-        Vector<Integer>diff=getDiff(c1,opt);
-        int [] curr=copyArray(c1);
-        int [] best=copyArray(c1);
-//        int  bestValue=func.function(best);
-        for(int i=0;i<diff.size()-2;++i){
-            int k=i+1;
-            while(k<diff.size()&&curr[diff.get(k)]!=opt[diff.get(i)])++k;
-            int temp=curr[diff.get(i)];
-            curr[diff.get(i)]=opt[diff.get(i)];
-            curr[diff.get(k)]=temp;
-            if(curr[diff.get(k)]==opt[diff.get(k)])
-                diff.remove(k);
-//            if(func.function(curr)<bestValue){
-//                best=copyArray(curr);
-//            }
-            for(int j=0;j<curr.length;++j){
-                System.out.print(curr[j]+" ");
-            }
-            System.out.println("\n");
-
-        }
 
 
-    }
-    private Vector<Integer> getDiff(int []c1,int []opt){
-        Vector<Integer>diff=new Vector<Integer>();
-        for(int i=0;i<cLength;++i){
-            if(c1[i]!=opt[i]){
-                diff.add(i);
-            }
-        }
-        if(diff.size()==2){
-            int a=random.nextInt(cLength);
-            int b=random.nextInt(cLength);
-            while(b==a||c1[b]==c1[a])b=random.nextInt(cLength);
-            int temp=c1[b];
-            c1[b]=c1[a];
-            c1[a]=temp;
-            return getDiff(c1,opt);
-        }
-        int k=diff.size();
-        for(int i=0;i<diff.size();++i){
-            int rand=random.nextInt(k);
-            int temp=diff.get(k-1);
-            diff.set(k-1,diff.get(rand));
-            diff.set(rand,temp);
-            --k;
-        }
 
-        return diff;
-    }
     protected int [] generateAllNegativeOffspring(int len){
         int [] offspring=new int[len];
         for(int i=0;i<len;++i){
@@ -105,16 +52,37 @@ public class JSPOperator {
             alreadyAddNum[i]=0;
         }
     }
-    protected int [] copyArray(int [] c){
-        int [] copy=new int[c.length];
-        for(int i=0;i<copy.length;++i){
-            copy[i]=c[i];
-        }
-        return copy;
-    }
-    public static void main(String [] args){
-        int [] c1={2,2,3,2,3,3,3,2,2,3};
-        int [] c2={3,2,3,3,2,2,2,3,3,2};
-        new JSPOperator(10,10).PathRelinking(c1,c2);
+
+//    public static void testInsert(){
+//        int [] a={1,2,3,4,5,6,7,8,9};
+//        int [] res=new JSPOperator(9,1).insert(a,10);
+//        for(int i=0;i<res.length;++i){
+//            System.out.print(res[i]+" ");
+//        }
+//    }
+//    public static void testPathRelinking(){
+//        int []a={1,2,3,3,2,4,1,2,3,1};
+//        int []b={3,1,2,4,2,3,1,1,2,3};
+//        new JSPOperator(10,9).PathRelinking(a,b);
+//    }
+
+    public static void main(String [] args) {
+//        int [] c1={2,2,3,2,3,3,3,2,2,3};
+//        int [] c2={3,2,3,3,2,2,2,3,3,2};
+//        new JSPOperator(10,10).PathRelinking(c1,c2);
+//        Integer[] c = {2, 3, 2, 2, 1, 2, 1};
+//        List list = Arrays.asList(c);
+//        LinkedList<Integer> linkedList = new LinkedList<Integer>(list);
+//        Integer[] a = linkedList.toArray(new Integer[linkedList.size()+2]);
+//        a[0] = 3;
+//        for (Integer item : c) {
+//            System.out.print(item + " ");
+//        }
+//        System.out.println("");
+//        for (Integer item : a) {
+//            System.out.print(item + " ");
+//        }
+//        testInsert();
+//        testPathRelinking();
     }
 }
