@@ -11,20 +11,38 @@ public class Operator {
         this.cLength=cLength;
         this.func=func;
     }
-    protected int [] insert(int []c,int times){
+    public static LinkedList<Integer> array2LinkedList(Integer []c){
+        List<Integer> list= Arrays.asList(c);
+        return new LinkedList<>(list);
+    }
+
+    public static int [] insertByTimes(int []c,int times){
         Integer [] copyc=int2Integer(c);
-        List<Integer> list= Arrays.asList(copyc);
-        LinkedList<Integer> linkedList=new LinkedList<>(list);
+        LinkedList<Integer>linkedList=array2LinkedList(copyc);
         for(int i=0;i<times;++i){
             insertByOne(linkedList);
         }
         Integer [] res=linkedList.toArray(copyc);
         return Integer2int(res);
     }
-    protected void insertByOne(LinkedList<Integer>c) {
+    protected static void insertByOne(LinkedList<Integer>c) {
         int [] pos=generateTwoDifferentInteger(c.size());
-        Integer itemBeSelected=c.remove(pos[0]);
-        c.add(pos[1],itemBeSelected);
+        insertByOne(c,pos[0],pos[1],false);
+    }
+    protected static LinkedList<Integer>  insertByOne(LinkedList<Integer>c,int originalPos,int newPos,boolean returnWithNewOne){
+        /**
+         * originalPos是原index
+         * newPos是插入的index
+         * returnWithNewOne 如果为true就返回一个复制的LinkedList，通常在调用时需要赋给新的变量
+         *                  如果为false就返回原LinkedList,通常在调用时就不用赋值给新的变量
+         */
+
+        if(returnWithNewOne){
+            c=new LinkedList<Integer>(c);
+        }
+        Integer itemBeSelected=c.remove(originalPos);
+        c.add(newPos,itemBeSelected);
+        return c;
     }
     protected static int [] generateTwoDifferentInteger(int max){
         int []res=new int[2];
@@ -34,32 +52,32 @@ public class Operator {
             res[1]=random.nextInt(max);
         return res;
     }
-    protected Integer[] int2Integer(int [] array){
+    protected static Integer[] int2Integer(int [] array){
         Integer [] res=new Integer[array.length];
         for(int i=0;i<array.length;++i){
             res[i]=array[i];
         }
         return res;
     }
-    protected int [] Integer2int(Integer [] array){
+    protected static int [] Integer2int(Integer [] array){
         int [] res=new int[array.length];
         for(int i=0;i< array.length;++i){
             res[i]=array[i];
         }
         return res;
     }
-    protected static int[] swap(int []c){
+    public static int[] swap(int []c){
         int [] pos=generateTwoDifferentInteger(c.length);
         return swap(c,pos[0],pos[1]);
     }
-    protected static int [] swap(int []c,int pos1,int pos2){
+    public static int [] swap(int []c,int pos1,int pos2){
         int [] copyc=copyArray(c);
         int temp=copyc[pos1];
         copyc[pos1]=copyc[pos2];
         copyc[pos2]=temp;
         return copyc;
     }
-    protected  int[] PathRelinking(int[] c1,int[] opt) {
+    public  int[] PathRelinking(int[] c1,int[] opt) {
         int [] copyc1=copyArray(c1);
         Vector<Integer> diff=getDiff(copyc1,opt);
         int [] curr=copyArray(copyc1);
@@ -117,5 +135,39 @@ public class Operator {
             --k;
         }
         return diff;
+    }
+    protected static int [] generateReferenceLoc(int clength){
+        /**
+         * 生成0到clength-1的随机排列
+         */
+        int [] ref=new int[clength];
+        for(int i=0;i<clength;++i){
+            ref[i]=i;
+        }
+        for(int i=0;i<clength;++i)
+            ref=swap(ref);
+        return ref;
+    }
+    protected static int [] findOptByInsertAll(int [] c,Func func,Compare compare){
+        int []ref=generateReferenceLoc(c.length);
+        int originalValue=func.function(c);
+        int bestValue=originalValue;
+        int [] bestC=c;
+        Integer []copyc=int2Integer(c);
+        LinkedList<Integer>linkedList=array2LinkedList(copyc);
+        for(int item:ref){
+            for(int i=0;i<linkedList.size();++i){
+                if(i!=item){
+                    linkedList=insertByOne(linkedList,item,i,true);
+                    int [] newC=Integer2int(linkedList.toArray(new Integer[linkedList.size()]));
+                    int newValue=func.function(newC);
+                    if(compare.function(newValue,bestValue)) {
+                        bestC=newC;
+                        bestValue=newValue;
+                    }
+                }
+            }
+        }
+        return bestC;
     }
 }

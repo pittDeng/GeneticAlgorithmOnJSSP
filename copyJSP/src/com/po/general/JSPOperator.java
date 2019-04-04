@@ -6,16 +6,18 @@ import java.util.*;
 public class JSPOperator extends Operator{
     protected int []alreadyAddNum;
     private int OperationForEachJob;
-
-    public JSPOperator (int cLength,int OperationForEachJob,Func func){
+    private int JobNum;
+    public JSPOperator (int cLength,int JobNum,int OperationForEachJob,Func func){
         super(cLength,func);
         this.OperationForEachJob=OperationForEachJob;
+        this.JobNum=JobNum;
+        alreadyAddNum=new int[JobNum];
         if(cLength<5){
             System.out.println("染色体长度必须大于4");
             System.exit(0);
         }
     }
-    protected int [] pbx(int [] c1,int [] c2,double pbxPossibility){
+    public int [] pbx(int [] c1,int [] c2,double pbxPossibility){
         int [] offspring=generateAllNegativeOffspring(cLength);
         clearAlreadyAddNum();
         for(int i=0;i<cLength;++i){
@@ -37,9 +39,6 @@ public class JSPOperator extends Operator{
         }
         return offspring;
     }
-
-
-
     protected int [] generateAllNegativeOffspring(int len){
         int [] offspring=new int[len];
         for(int i=0;i<len;++i){
@@ -52,6 +51,27 @@ public class JSPOperator extends Operator{
             alreadyAddNum[i]=0;
         }
     }
+
+//    protected int [] findLocationBetween(int []c,int[] rsequence){
+//        int [] loc=new int[c.length];
+//        clearAlreadyAddNum();
+//        for(int i=0;i<rsequence.length;++i){
+//            int index=1;
+//            for(int j=0;j<c.length;++j){
+//                if(c[j]==rsequence[i]){
+//                    if(index>alreadyAddNum[c[j]]){
+//                        alreadyAddNum[c[j]]++;
+//                        loc[i]=j;
+//                        break;
+//                    }
+//                    index++;
+//                }
+//            }
+//        }
+//        return loc;
+//    }
+
+
 
 //    public static void testInsert(){
 //        int [] a={1,2,3,4,5,6,7,8,9};
@@ -67,22 +87,7 @@ public class JSPOperator extends Operator{
 //    }
 
     public static void main(String [] args) {
-//        int [] c1={2,2,3,2,3,3,3,2,2,3};
-//        int [] c2={3,2,3,3,2,2,2,3,3,2};
-//        new JSPOperator(10,10).PathRelinking(c1,c2);
-//        Integer[] c = {2, 3, 2, 2, 1, 2, 1};
-//        List list = Arrays.asList(c);
-//        LinkedList<Integer> linkedList = new LinkedList<Integer>(list);
-//        Integer[] a = linkedList.toArray(new Integer[linkedList.size()+2]);
-//        a[0] = 3;
-//        for (Integer item : c) {
-//            System.out.print(item + " ");
-//        }
-//        System.out.println("");
-//        for (Integer item : a) {
-//            System.out.print(item + " ");
-//        }
-//        testInsert();
-//        testPathRelinking();
+       int[] ref= JSPOperator.generateReferenceLoc(10);
+        for(int item:ref)System.out.print(item+" ");
     }
 }
