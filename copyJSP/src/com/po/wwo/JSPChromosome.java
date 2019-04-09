@@ -8,7 +8,7 @@ import com.po.general.Func;
 public final class JSPChromosome extends Chromosome {
     public static Code read=new Code("data.txt");
     private int fitnessValue=0;
-    private int height=5;
+    private int height;
     private Func func;
     private static int heightMax=5;
     public JSPChromosome(Func func){
