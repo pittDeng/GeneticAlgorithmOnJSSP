@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e3e1a51-8f60-439a-90b8-99e0f014fb0c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/po/general/Chromosome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/po/general/Func.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/po/general/JSPOperator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/po/general/OA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/po/general/Operator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/po/wwo/WWO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/po/data/ToExcel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Function.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Genetic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/po/Function.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/GA/Function.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/po/Genetic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/GA/Genetic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/po/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/GA/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JSP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/Parameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Chromosome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/Chromosome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/JSPOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/JSPOperator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/OA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/OA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/Operator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/po/general/Chromosome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/general/Chromosome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/po/general/JSPOperator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/general/JSPOperator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/po/general/OA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/general/OA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/po/general/Operator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/general/Operator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/po/wwo/JSPChromosome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/wwo/JSPChromosome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/po/wwo/WWO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/wwo/WWO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -154,18 +154,27 @@
     <session id="-1250145200">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.41" value="1" />
+          <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.43" value="1" />
+          <entry key="project.open.time.60" value="1" />
+          <entry key="project.open.time.68" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="11" />
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="39" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4971" />
+          <entry key="JAVA" value="18966" />
+          <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
     </session>
@@ -176,41 +185,92 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/po/wwo/WWO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/po/general/Operator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+            <state relative-caret-position="140">
+              <caret line="187" column="23" selection-start-line="187" selection-start-column="23" selection-end-line="187" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1488#1497#0" expanded="true" />
+                <element signature="e#9364#9365#0" expanded="true" />
+                <element signature="e#9389#9390#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/po/general/Func.java">
+        <entry file="file://$PROJECT_DIR$/src/com/po/Parameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="369">
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-180">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/po/wwo/WWO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-63">
+              <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#639#640#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#4410#4411#0" expanded="true" />
+                <element signature="e#4445#4446#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/po/data/ToExcel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/po/ReadData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3465">
+              <caret line="86" selection-start-line="86" selection-end-line="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#269#270#0" expanded="true" />
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#342#343#0" expanded="true" />
+                <element signature="e#375#376#0" expanded="true" />
+                <element signature="e#2321#2322#0" expanded="true" />
+                <element signature="e#2348#2349#0" expanded="true" />
+                <element signature="e#2403#2404#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/po/Code.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -218,8 +278,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/po/general/Chromosome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="271">
+              <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+              <folding>
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#678#679#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,29 +291,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/po/general/OA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-135">
-              <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="347">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/po/GA/Genetic.java">
+        <entry file="file://$PROJECT_DIR$/src/com/po/wwo/JSPChromosome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="368" column="25" lean-forward="true" selection-start-line="349" selection-start-column="8" selection-end-line="368" selection-end-column="25" />
+            <state relative-caret-position="222">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1013#1014#0" expanded="true" />
+                <element signature="e#1049#1050#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -266,9 +323,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>decode</find>
-      <find>数组越界</find>
-      <find>pop.length</find>
       <find>alreadyAddNum</find>
       <find>so1.length</find>
       <find>so2.length</find>
@@ -291,6 +345,14 @@
       <find>alpha</find>
       <find>10</find>
       <find>c2</find>
+      <find>get</find>
+      <find>Node</find>
+      <find>remove</find>
+      <find>ALREADYADD</find>
+      <find>random</find>
+      <find>pathre</find>
+      <find>System.out.</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>numSolutions</replace>
@@ -312,20 +374,24 @@
         <option value="$PROJECT_DIR$/src/com/po/Solution.java" />
         <option value="$PROJECT_DIR$/src/com/po/Function.java" />
         <option value="$PROJECT_DIR$/ft10.txt" />
-        <option value="$PROJECT_DIR$/src/com/po/Parameter.java" />
         <option value="$PROJECT_DIR$/src/com/po/Genetic.java" />
         <option value="$PROJECT_DIR$/src/com/po/Code.java" />
         <option value="$PROJECT_DIR$/src/com/po/OA.java" />
         <option value="$PROJECT_DIR$/src/com/po/WWO.java" />
         <option value="$PROJECT_DIR$/src/com/po/Chromosome.java" />
         <option value="$PROJECT_DIR$/src/com/po/GA/Function.java" />
-        <option value="$PROJECT_DIR$/src/com/po/wwo/WWO.java" />
         <option value="$PROJECT_DIR$/src/com/po/GA/Solution.java" />
-        <option value="$PROJECT_DIR$/src/com/po/general/Chromosome.java" />
-        <option value="$PROJECT_DIR$/src/com/po/general/Operator.java" />
-        <option value="$PROJECT_DIR$/src/com/po/general/OA.java" />
         <option value="$PROJECT_DIR$/src/com/po/general/Func.java" />
+        <option value="$PROJECT_DIR$/src/com/po/general/Compare.java" />
+        <option value="$PROJECT_DIR$/src/com/po/general/Chromosome.java" />
+        <option value="$PROJECT_DIR$/src/com/po/wwo/Temp.java" />
+        <option value="$PROJECT_DIR$/src/com/po/Parameter.java" />
+        <option value="$PROJECT_DIR$/src/com/po/general/Operator.java" />
         <option value="$PROJECT_DIR$/src/com/po/general/JSPOperator.java" />
+        <option value="$PROJECT_DIR$/src/com/po/wwo/JSPChromosome.java" />
+        <option value="$PROJECT_DIR$/src/com/po/general/OA.java" />
+        <option value="$PROJECT_DIR$/src/com/po/data/ToExcel.java" />
+        <option value="$PROJECT_DIR$/src/com/po/wwo/WWO.java" />
       </list>
     </option>
   </component>
@@ -341,7 +407,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-111" />
     <option name="width" value="1460" />
     <option name="height" value="920" />
@@ -352,8 +418,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -382,6 +446,13 @@
               <item name="copyJSP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="po" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="copyJSP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="copyJSP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="po" type="462c0819:PsiDirectoryNode" />
               <item name="GA" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -402,20 +473,25 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Administrator/Desktop/copyJSP/src/com/po/Solution.java" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="git&#9;ACTION&#9;Git.ContextMenu&#10;Git&#9;ACTION&#9;Git.Menu" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554128576912" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554810893132" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/poi-4.0.1/poi-4.0.1.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.kotlinCompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -429,33 +505,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JSPOperator">
-    <configuration name="Code" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.po.Code" />
-      <module name="JSP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.po.GA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Genetic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.po.GA.Genetic" />
-      <module name="JSP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.po.GA.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.WWO">
     <configuration name="JSPOperator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.po.general.JSPOperator" />
       <module name="JSP" />
@@ -469,12 +519,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.po.ReadData" />
+    <configuration name="Operator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.po.general.Operator" />
       <module name="JSP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.po.GA.*" />
+          <option name="PATTERN" value="com.po.general.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Temp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.po.wwo.Temp" />
+      <module name="JSP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.po.wwo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ToExcel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.po.data.ToExcel" />
+      <module name="JSP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.po.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WWO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.po.wwo.WWO" />
+      <module name="JSP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.po.wwo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -483,17 +572,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ReadData" />
-      <item itemvalue="Application.Code" />
-      <item itemvalue="Application.Genetic" />
       <item itemvalue="Application.JSPOperator" />
+      <item itemvalue="Application.Operator" />
+      <item itemvalue="Application.WWO" />
+      <item itemvalue="Application.Temp" />
+      <item itemvalue="Application.ToExcel" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WWO" />
+        <item itemvalue="Application.ToExcel" />
+        <item itemvalue="Application.Temp" />
+        <item itemvalue="Application.Operator" />
         <item itemvalue="Application.JSPOperator" />
-        <item itemvalue="Application.Genetic" />
-        <item itemvalue="Application.Code" />
-        <item itemvalue="Application.ReadData" />
       </list>
     </recent_temporary>
   </component>
@@ -525,11 +616,45 @@
       <workItem from="1551445325645" duration="3829000" />
       <workItem from="1551493939118" duration="62000" />
       <workItem from="1554105478829" duration="19406000" />
+      <workItem from="1554168723885" duration="23238000" />
+      <workItem from="1554257598056" duration="10424000" />
+      <workItem from="1554430113921" duration="2619000" />
+      <workItem from="1554709538015" duration="15680000" />
+      <workItem from="1554772286131" duration="30246000" />
     </task>
+    <task id="LOCAL-00001" summary="some updates">
+      <created>1554205667438</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554205667438</updated>
+    </task>
+    <task id="LOCAL-00002" summary="some updates">
+      <created>1554342766709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1554342766709</updated>
+    </task>
+    <task id="LOCAL-00003" summary="some updates">
+      <created>1554727780270</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554727780270</updated>
+    </task>
+    <task id="LOCAL-00004" summary="some updates">
+      <created>1554795231399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1554795231399</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123771000" />
+    <option name="totallyTimeSpent" value="205978000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,8 +669,8 @@
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.66132724" visible="true" weight="0.3187679" />
-      <window_info id="Structure" order="1" sideWeight="0.33867276" side_tool="true" visible="true" weight="0.3187679" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.80215055" visible="true" weight="0.34383956" />
+      <window_info id="Structure" order="1" sideWeight="0.19784947" side_tool="true" visible="true" weight="0.34383956" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -554,14 +679,14 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.41025642" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37246963" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49928367" weight="0.44204852" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49928367" weight="0.32388663" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32884097" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928367" weight="0.32884097" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928367" weight="0.32793522" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007163" side_tool="true" weight="0.48921832" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928367" weight="0.32793522" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -582,6 +707,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="some updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="some updates" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -598,16 +727,16 @@
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/po/Code.java</url>
-          <line>24</line>
+          <url>file://$PROJECT_DIR$/src/com/po/general/Operator.java</url>
+          <line>290</line>
           <properties />
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/po/Code.java</url>
-          <line>113</line>
+          <url>file://$PROJECT_DIR$/src/com/po/general/OA.java</url>
+          <line>17</line>
           <properties />
-          <option name="timeStamp" value="18" />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -631,9 +760,159 @@
     <entry file="file://$PROJECT_DIR$/src/com/po/cOD.java" />
     <entry file="file://$PROJECT_DIR$/../jobshop1.txt" />
     <entry file="file://$PROJECT_DIR$/../新建文本文档 (2).txt" />
+    <entry file="file://$PROJECT_DIR$/ft10.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/General.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/util/Deque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10170">
+          <caret line="259" column="28" selection-start-line="259" selection-start-column="28" selection-end-line="259" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/lang/Comparable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3240">
+          <caret line="95" column="17" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Genetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16335">
+          <caret line="368" column="25" selection-start-line="349" selection-start-column="8" selection-end-line="368" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="210" column="33" selection-start-line="210" selection-start-column="33" selection-end-line="210" selection-end-column="33" />
+          <folding>
+            <element signature="e#8938#8939#0" expanded="true" />
+            <element signature="e#8965#8966#0" expanded="true" />
+            <element signature="e#15878#15879#0" expanded="true" />
+            <element signature="e#15927#15928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/Func.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/util/TimSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18143">
+          <caret line="249" column="34" lean-forward="true" selection-start-line="249" selection-start-column="34" selection-end-line="249" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="1442" column="22" lean-forward="true" selection-start-line="1442" selection-start-column="22" selection-end-line="1442" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/wwo/Temp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/jre/lib/rt.jar!/sun/misc/Launcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="199" selection-start-line="199" selection-end-line="199" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="356" selection-start-line="356" selection-end-line="356" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Java/jdk1.8/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/Compare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/Chromosome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="29" column="23" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+          <folding>
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/Parameter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/Code.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/po/ReadData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3555">
+        <state relative-caret-position="3465">
           <caret line="86" selection-start-line="86" selection-end-line="86" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -648,63 +927,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ft10.txt">
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/General.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/Code.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/Parameter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="-180">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
           <folding>
-            <element signature="e#1243#1244#0" expanded="true" />
-            <element signature="e#1286#1287#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Solution.java">
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/Operator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="140">
+          <caret line="187" column="23" selection-start-line="187" selection-start-column="23" selection-end-line="187" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9364#9365#0" expanded="true" />
+            <element signature="e#9389#9390#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Genetic.java">
+    <entry file="file://$PROJECT_DIR$/src/com/po/wwo/JSPChromosome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="368" column="25" lean-forward="true" selection-start-line="349" selection-start-column="8" selection-end-line="368" selection-end-column="25" />
+        <state relative-caret-position="222">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+            <element signature="e#1049#1050#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/OA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/data/ToExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -713,46 +980,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/po/wwo/WWO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/Operator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/Chromosome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/OA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="8" column="32" lean-forward="true" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/Func.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="115" column="26" selection-start-line="115" selection-start-column="26" selection-end-line="115" selection-end-column="26" />
+        <state relative-caret-position="-63">
+          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1488#1497#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#4410#4411#0" expanded="true" />
+            <element signature="e#4445#4446#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -814,7 +1049,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -4,7 +4,7 @@ import com.po.Code;
 import java.util.*;
 
 public class JSPOperator extends Operator{
-    protected int []alreadyAddNum;
+    protected static int []alreadyAddNum;
     private int OperationForEachJob;
     private int JobNum;
     public JSPOperator (int cLength,int JobNum,int OperationForEachJob,Func func){
@@ -18,16 +18,16 @@ public class JSPOperator extends Operator{
         }
     }
     public int [] pbx(int [] c1,int [] c2,double pbxPossibility){
-        int [] offspring=generateAllNegativeOffspring(cLength);
+        int [] offspring=generateAllNegativeOffspring(c1.length);
         clearAlreadyAddNum();
-        for(int i=0;i<cLength;++i){
+        for(int i=0;i<c1.length;++i){
             if(random.nextDouble()< pbxPossibility){
                 offspring[i]=c1[i];
                 ++alreadyAddNum[c1[i]];
             }
         }
         int k=0;
-        for(int i=0;i<cLength;++i){
+        for(int i=0;i<c1.length;++i){
             if(offspring[i]==c1[i])
                 continue;
             else{
@@ -39,14 +39,14 @@ public class JSPOperator extends Operator{
         }
         return offspring;
     }
-    protected int [] generateAllNegativeOffspring(int len){
+    protected static int [] generateAllNegativeOffspring(int len){
         int [] offspring=new int[len];
         for(int i=0;i<len;++i){
             offspring[i]=-1;
         }
         return offspring;
     }
-    protected void clearAlreadyAddNum(){
+    protected static void clearAlreadyAddNum(){
         for(int i=0;i<alreadyAddNum.length;++i){
             alreadyAddNum[i]=0;
         }

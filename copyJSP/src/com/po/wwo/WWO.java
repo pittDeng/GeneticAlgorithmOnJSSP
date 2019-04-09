@@ -2,6 +2,7 @@ package com.po.wwo;
 
 import com.po.Code;
 import com.po.Parameter;
+import com.po.data.ToExcel;
 import com.po.general.*;
 
 import java.util.Arrays;
@@ -44,10 +45,10 @@ public class WWO extends OA {
     public void OneIteration() {
         for(int i=0;i<popSize;++i){
             JSPChromosome jspChromosome=twoStagePropagation(pop[i]);
-            int [] afterpbx= new JSPOperator(pop[i].getCode().length,JSPChromosome.read.getWorkpieceNum(),JSPChromosome.read.getJobForEachWorkPiece(),func).pbx(pop[i].getCode(),best.getCode(), Parameter.pbxPossibility);
-            if(func.function(afterpbx)<jspChromosome.getFitnessValue()){
-                jspChromosome.setCode(afterpbx);
-            }
+//            int [] afterpbx= new JSPOperator(pop[i].getCode().length,JSPChromosome.read.getWorkpieceNum(),JSPChromosome.read.getJobForEachWorkPiece(),func).pbx(pop[i].getCode(),best.getCode(), Parameter.pbxPossibility);
+//            if(func.function(afterpbx)<jspChromosome.getFitnessValue()){
+//                jspChromosome.setCode(afterpbx);
+//            }
             if(jspChromosome.getFitnessValue()<pop[i].getFitnessValue()){
                 if(jspChromosome.getFitnessValue()<best.getFitnessValue()){
                     int []bestcode=Operator.vns(jspChromosome.getCode(),func);
@@ -63,7 +64,7 @@ public class WWO extends OA {
                     int [] temp=Operator.PathRelinking(pop[i].getCode(),best.getCode());
                     pop[i]=new JSPChromosome(func);
                     pop[i].setCode(temp);
-                    if(Operator.getDistance(pop[i].getCode(),best.getCode())<=10&&pop[i].getFitnessValue()>=best.getFitnessValue()){
+                    if(Operator.getDistance(pop[i].getCode(),best.getCode())<=5&&pop[i].getFitnessValue()>=best.getFitnessValue()){
                         pop[i].init();
                     }
                 }
@@ -101,9 +102,20 @@ public class WWO extends OA {
             chromosome1.setCode(best);
             return chromosome1;
     }
+
+    public static void statisticalGo(int times,int iterNum,int popSize) {
+        ToExcel toExcel=new ToExcel("JSPdata.xls","JSP");
+        toExcel.insertString(0,0,"ft10");
+        for(int i=0;i<times;++i){
+            System.out.println(String.format("--------------------------------------%d-------------------------",i));
+            WWO wwo=new WWO(iterNum,popSize);
+            wwo.go();
+            toExcel.insertData(0,i+1,wwo.best.getFitnessValue());
+        }
+    }
+
     public static void main(String [] args){
-        WWO wwo=new WWO(1000,50);
-        wwo.go();
+        WWO.statisticalGo(50,1000,50);
     }
 
 }

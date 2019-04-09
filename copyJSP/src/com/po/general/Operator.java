@@ -1,12 +1,14 @@
 package com.po.general;
 
 
+import com.po.Parameter;
+
 import java.util.*;
 
 public class Operator {
     protected int cLength;
     protected static Random random=new Random();
-    protected Func func;
+    protected static Func func= Parameter.func;
     public Operator(int cLength,Func func){
         this.cLength=cLength;
         this.func=func;
@@ -66,23 +68,79 @@ public class Operator {
         }
         return res;
     }
-    public static int[] swap(int []c){
-        int [] pos=generateTwoDifferentInteger(c.length);
-        return swap(c,pos[0],pos[1]);
+    public static int [] Ls1(int [] c,Func func){
+        int [] ref=generateReferenceLoc(c.length);
+        int k=0;
+        int counter=0;
+        LinkedList<Integer> curr=array2LinkedList(int2Integer(c));
+        while(counter<c.length){
+            int [] best=copyArray(Integer2int(curr.toArray(new Integer[c.length])));
+            for(int index=0;index<c.length;++index){
+                if(index!=ref[k]){
+                    insertByOne(curr,ref[k],index,false);
+                    int [] currArray=Integer2int(curr.toArray(new Integer[c.length]));
+                    if(func.function(currArray)<func.function(best))
+                        best=currArray;
+                    //将插入之后的数组还原
+                    insertByOne(curr,index,ref[k],false);
+                }
+            }
+            if(func.function(best)<func.function(copyArray(Integer2int(curr.toArray(new Integer[c.length]))))){
+                curr=array2LinkedList(int2Integer(best));
+                counter=0;
+            }
+            else
+                counter+=1;
+            k=(k+1)%c.length;
+        }
+        return Integer2int(curr.toArray(new Integer[c.length]));
     }
-    public static int [] swap(int []c,int pos1,int pos2){
-        int [] copyc=copyArray(c);
-        int temp=copyc[pos1];
-        copyc[pos1]=copyc[pos2];
-        copyc[pos2]=temp;
+    public static int[] Ls2(int []c,Func func){
+        int []copyc=copyArray(c);
+        int []ref=generateReferenceLoc(c.length);
+        int k=0;
+        int counter=0;
+        while(counter<c.length){
+            int [] best=copyArray(copyc);
+            for(int index=ref[k]+1;index<copyc.length;++index){
+                swap(copyc,ref[k],index,false);
+                if(func.function(copyc)<func.function(best)){
+                    best=copyArray(copyc);
+                }
+                swap(copyc,index,ref[k],false);
+            }
+            if(func.function(best)<func.function(copyc)){
+                copyc=best;
+                counter=0;
+            }
+            else counter+=1;
+            k=(k+1)%c.length;
+        }
         return copyc;
     }
-    public  int[] PathRelinking(int[] c1,int[] opt) {
+    public static int[] swap(int []c){
+        int [] pos=generateTwoDifferentInteger(c.length);
+        //返回一个新的数组
+        return swap(c,pos[0],pos[1],true);
+    }
+    public static int [] swap(int []c,int pos1,int pos2,boolean returnWithNewOne){
+        /**
+         * c是带执行操作的数组
+         * pos1和pos2是交换的位置
+         * returnWithNewOne为true时，在新数组上操作，为false时，在原数组上操作
+         */
+        if(returnWithNewOne)c=copyArray(c);
+        int temp=c[pos1];
+        c[pos1]=c[pos2];
+        c[pos2]=temp;
+        return c;
+    }
+    public static int[] PathRelinking(int[] c1,int[] opt) {
         int [] copyc1=copyArray(c1);
         Vector<Integer> diff=getDiff(copyc1,opt);
         int [] curr=copyArray(copyc1);
         int [] best=copyArray(copyc1);
-//        int  bestValue=func.function(best);
+        int  bestValue=func.function(best);
         for(int i=0;i<diff.size()-2;++i){
             int k=i+1;
             while(k<diff.size()&&curr[diff.get(k)]!=opt[diff.get(i)])++k;
@@ -91,39 +149,42 @@ public class Operator {
             curr[diff.get(k)]=temp;
             if(curr[diff.get(k)]==opt[diff.get(k)])
                 diff.remove(k);
-//            if(func.function(curr)<bestValue){
-//                best=copyArray(curr);
-//            }
-            for(int j=0;j<curr.length;++j){
-                System.out.print(curr[j]+" ");
+            if(func.function(curr)<bestValue){
+                best=copyArray(curr);
             }
-            System.out.println("\n");
+//            for(int j=0;j<curr.length;++j){
+//                System.out.print(curr[j]+" ");
+//            }
+//            System.out.println("\n");
 
         }
         return best;
-
     }
-    protected static int [] copyArray(int [] c){
+    public static int [] copyArray(int [] c){
         int [] copy=new int[c.length];
         for(int i=0;i<copy.length;++i){
             copy[i]=c[i];
         }
         return copy;
     }
-    private  Vector<Integer> getDiff(int []c1,int []opt){
+    private  static Vector<Integer> getDiff(int []c1,int []opt){
         Vector<Integer>diff=new Vector<Integer>();
-        for(int i=0;i<cLength;++i){
+        for(int i=0;i<c1.length;++i){
             if(c1[i]!=opt[i]){
                 diff.add(i);
             }
         }
         if(diff.size()==2){
-            int a=random.nextInt(cLength);
-            int b=random.nextInt(cLength);
-            while(b==a||c1[b]==c1[a])b=random.nextInt(cLength);
-            int temp=c1[b];
-            c1[b]=c1[a];
-            c1[a]=temp;
+            int [] temp=insertByTimes(c1,20);
+            for(int i=0;i<temp.length;++i){
+                c1[i]=temp[i];
+            }
+//            int a=random.nextInt(c1.length);
+//            int b=random.nextInt(c1.length);
+//            while(b==a)b=random.nextInt(c1.length);
+//            int temp=c1[b];
+//            c1[b]=c1[a];
+//            c1[a]=temp;
             return getDiff(c1,opt);
         }
         int k=diff.size();
@@ -135,6 +196,13 @@ public class Operator {
             --k;
         }
         return diff;
+    }
+    public static int getDistance(int []c1,int[] c2){
+        int res=0;
+        for(int i=0;i<c1.length;++i){
+            if(c1[i]!=c2[i])res+=1;
+        }
+        return res;
     }
     protected static int [] generateReferenceLoc(int clength){
         /**
@@ -170,4 +238,68 @@ public class Operator {
         }
         return bestC;
     }
+    public static int[] vns(int []c,Func func){
+        int l=1;
+        int [] newc;
+        while(l<=2){
+            if(l==1)
+                newc=Ls2(c,func);
+            else
+                newc=Ls1(c,func);
+            if(func.function(newc)<func.function(c)){
+                l=1;
+                c=newc;
+            }else
+                l+=1;
+        }
+        return c;
+    }
+    public static void testLs1(){
+        /**
+         * 测试Ls1函数
+         */
+        Func func=(x)->{
+            int res=0;
+            for(int i=0;i<x.length-1;++i){
+                if(x[i]>x[i+1])res+=1;
+            }
+            return res;
+        };
+        int []c={1,5,6,7,3,4,2};
+        int [] res=Operator.Ls1(c,func);
+
+        for(int i=0;i<res.length;++i){
+            System.out.print(res[i]+" ");
+        }
+        System.out.println(" ");
+        System.out.println(func.function(c));
+        System.out.println(func.function(res));
+    }
+
+    public static void testLs2(){
+        /**
+         * 测试Ls2函数
+         */
+        Func func=(x)->{
+            int res=0;
+            for(int i=0;i<x.length-1;++i){
+                if(x[i]<x[i+1])res+=1;
+            }
+            return res;
+        };
+        int []c={1,5,6,7,3,4,2};
+        int [] res=Operator.vns(c,func);
+
+        for(int i=0;i<res.length;++i){
+            System.out.print(res[i]+" ");
+        }
+        System.out.println(" ");
+        System.out.println(func.function(c));
+        System.out.println(func.function(res));
+    }
+
+    public static void main(String [] args){
+        testLs2();
+    }
 }
+

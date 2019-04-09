@@ -6,7 +6,7 @@ import com.po.general.Chromosome;
 import com.po.general.Func;
 
 public final class JSPChromosome extends Chromosome {
-    public static Code read=new Code("data.txt");
+    public static Code read=new Code("ft10.txt");
     private int fitnessValue=0;
     private int height;
     private Func func;

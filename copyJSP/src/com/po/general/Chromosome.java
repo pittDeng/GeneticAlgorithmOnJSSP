@@ -18,5 +18,16 @@ public abstract class Chromosome implements Cloneable{
     }
     protected  abstract  void postClone();
     protected abstract void postGenerate();
+    protected abstract void init();
+
+    public int[] getCode() {
+        return code;
+    }
+
+    public void setCode(int[] code) {
+        //当code改变时，自动改变其他fitness值
+        this.code = code;
+        postGenerate();
+    }
 
 }
