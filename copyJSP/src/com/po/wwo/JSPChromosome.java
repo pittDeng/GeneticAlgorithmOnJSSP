@@ -10,7 +10,7 @@ public final class JSPChromosome extends Chromosome {
     private int fitnessValue=0;
     private int height;
     private Func func;
-    private static int heightMax=5;
+    private static int heightMax=2;
     public JSPChromosome(Func func){
         this.func=func;
     }

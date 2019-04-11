@@ -15,6 +15,7 @@ public class WWO extends OA {
     //每次propagation时insert得到的个体
     private int omega=3;
     private Func func=(x)->{return Code.decode(x);};
+    private static int fromIndex=0;
     private static Comparator<JSPChromosome> comparator=new Comparator<JSPChromosome>() {
         @Override
         public int compare(JSPChromosome o1, JSPChromosome o2) {
@@ -43,7 +44,8 @@ public class WWO extends OA {
 
     @Override
     public void OneIteration() {
-        for(int i=0;i<popSize;++i){
+        //本身这里没有fromIndex-------test-------
+        for(int i=fromIndex;i<popSize;++i){
             JSPChromosome jspChromosome=twoStagePropagation(pop[i]);
 //            int [] afterpbx= new JSPOperator(pop[i].getCode().length,JSPChromosome.read.getWorkpieceNum(),JSPChromosome.read.getJobForEachWorkPiece(),func).pbx(pop[i].getCode(),best.getCode(), Parameter.pbxPossibility);
 //            if(func.function(afterpbx)<jspChromosome.getFitnessValue()){
@@ -87,30 +89,43 @@ public class WWO extends OA {
     private JSPChromosome twoStagePropagation(Chromosome chromosome){
             int [] solution=Operator.insertByTimes(chromosome.getCode(),insertTimes);
             int fitness=func.function(solution);
-            int [] best=solution;
+            int [] bestso=solution;
             int bestFitness=fitness;
             for(int j=1;j<omega;++j){
                 solution=Operator.insertByTimes(chromosome.getCode(),insertTimes);
                 fitness=func.function(solution);
                 if(fitness<bestFitness){
-                    best=solution;
+                    bestso=solution;
                     bestFitness=fitness;
                 }
             }
-            best=Operator.Ls1(best,func);
+            //这里原本是Ls1
+            bestso=Operator.Ls2(bestso,func);
             JSPChromosome chromosome1=new JSPChromosome(func);
-            chromosome1.setCode(best);
+            chromosome1.setCode(bestso);
             return chromosome1;
+    }
+    public void saveBest(ToExcel toExcel,int rowIndex,int index){
+        int []c=best.getCode();
+        toExcel.insertData(rowIndex,0,index);
+        for(int i=0;i<c.length;++i){
+            toExcel.insertData(rowIndex,i+1,c[i]);
+        }
+        toExcel.save();
     }
 
     public static void statisticalGo(int times,int iterNum,int popSize) {
         ToExcel toExcel=new ToExcel("JSPdata.xls","JSP");
+        ToExcel bestSaver=new ToExcel("JSPdata.xls","JSPbest");
         toExcel.insertString(0,0,"ft10");
+        toExcel.save();
         for(int i=0;i<times;++i){
             System.out.println(String.format("--------------------------------------%d-------------------------",i));
             WWO wwo=new WWO(iterNum,popSize);
             wwo.go();
+            wwo.saveBest(bestSaver,i,i);
             toExcel.insertData(0,i+1,wwo.best.getFitnessValue());
+            toExcel.save();
         }
     }
 
