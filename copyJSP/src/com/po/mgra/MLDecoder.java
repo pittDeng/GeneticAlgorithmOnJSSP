@@ -29,10 +29,35 @@ public class MLDecoder {
         String []t=getSubString(txt,arr.get(3),arr.get(4));
         numOfJob=Integer.parseInt(jobmachine[1]);
         numOfMachine=Integer.parseInt(jobmachine[2]);
-        for(int i=1;i<=numOfJob;++i){
-            numOfOperation[i-1]=Integer.parseInt(npdw[i]);
+        int [] numOfOperation=new int[numOfJob];
+        for(int i=1;i<=numOfJob;++i) {
+            numOfOperation[i - 1] = Integer.parseInt(npdw[i]);
+        }
+        ArrayList<ArrayList<ArrayList<Integer>>>machineAvailable=new ArrayList<>();
+        ArrayList<ArrayList<ArrayList<Integer>>>machineTime=new ArrayList<>();
+        int ima=1;
+        for(int index=0;index<numOfJob;++index){
+            machineAvailable.add(new ArrayList<>());
+            machineTime.add(new ArrayList<>());
+            for(int j=0;j<numOfOperation[index];++j,++ima){
+                String [] temp=ma[ima].split(",");
+                String [] ttemp=t[ima].split(",");
+                if(temp.length!=ttemp.length)
+                {
+                    System.out.println("时间矩阵和可选矩阵不匹配");
+                    System.exit(-1);
+                }
+                machineAvailable.get(index).add(new ArrayList<>());
+                machineTime.get(index).add(new ArrayList<>());
+                for(int k=0;k<temp.length;++k){
+                    machineAvailable.get(index).get(j).add(Integer.parseInt(temp[k]));
+                    machineTime.get(index).get(j).add(Integer.parseInt(ttemp[k]));
+                }
+
+            }
         }
 
+        System.out.println("test");
     }
     private static String [] getSubString(String txt,int beginIndex,int endIndex){
         String res=null;
