@@ -46,7 +46,7 @@ public class Operator {
         c.add(newPos,itemBeSelected);
         return c;
     }
-    protected static int [] generateTwoDifferentInteger(int max){
+    public static int [] generateTwoDifferentInteger(int max){
         int []res=new int[2];
         res[0]=random.nextInt(max);
         res[1]=random.nextInt(max);
