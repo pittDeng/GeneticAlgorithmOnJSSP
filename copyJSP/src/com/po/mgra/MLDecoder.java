@@ -20,6 +20,7 @@ public class MLDecoder {
     private int[] orderTime;
     private int [] florder;
     private int [] flot;
+    ArrayList<SLProduct>slOrder;
     private int [] slorder;
     private int [] slot;
     private int[] sumOrder;
@@ -78,11 +79,6 @@ public class MLDecoder {
             this.order[i-1]=Integer.parseInt(or[i]);
             this.orderTime[i-1]=Integer.parseInt(ot[i]);
         }
-        this.sumOrder=new int[numOfJob];
-        for(int i=0;i<this.order.length;++i){
-            this.sumOrder[this.order[i]]+=1;
-        }
-
         String [] secondlayer=getSubString(txt,arr.get(6),arr.get(7));
         slProduct=new SLProduct[secondlayer.length-1];
         for(int i=1;i<secondlayer.length;++i){
@@ -96,17 +92,22 @@ public class MLDecoder {
         ArrayList<Integer>temporder=new ArrayList<>();
 
         ArrayList<Integer>tempot=new ArrayList<>();
-        ArrayList<Integer>slOrder=new ArrayList<>();
+        ArrayList<SLProduct>slOrder=new ArrayList<>();
         ArrayList<Integer>slOt=new ArrayList<>();
         for(int i=0;i<order.length;++i){
             boolean flag=true;
             for(int j=0;j<slProduct.length;++j){
                 if(order[i]==slProduct[j].index){
-                    for(int item:slProduct[j].flProduct){
+                    slOrder.add(new SLProduct(order[i],slProduct[j].flProduct));
+                    //for(int item:slProduct[j].flProduct)
+                    int len=slProduct[j].flProduct.length;
+                    slOrder.get(slOrder.size()-1).flindex=new int[len];
+                    for(int k=0;k<len;++k){
+                        int item=slProduct[j].flProduct[k];
                         temporder.add(item);
                         tempot.add(Integer.MAX_VALUE);
+                        slOrder.get(slOrder.size()-1).flindex[k]=temporder.size()-1;
                     }
-                    slOrder.add(order[i]);
                     slOt.add(orderTime[i]);
                     flag=false;
                 }
@@ -118,25 +119,69 @@ public class MLDecoder {
         }
         this.florder=Operator.Integer2int(temporder.toArray(new Integer[temporder.size()]));
         this.flot=Operator.Integer2int(tempot.toArray(new Integer[tempot.size()]));
-        this.slorder=Operator.Integer2int(slOrder.toArray(new Integer[slOrder.size()]));
+        this.slOrder=slOrder;
+        this.slorder=new int[this.slOrder.size()];
+        for(int i=0;i<slorder.length;++i){
+            slorder[i]=slOrder.get(i).index;
+        }
         this.slot=Operator.Integer2int(slOt.toArray(new Integer[slOt.size()]));
+        this.sumOrder=new int[numOfJob];
+        for(int i=0;i<this.florder.length;++i){
+            this.sumOrder[this.florder[i]]+=1;
+        }
+        for(int i=0;i<this.slOrder.size();++i){
+            this.sumOrder[this.slOrder.get(i).index]+=1;
+        }
+
     }
     private class SLProduct{
         public int index;
         public int [] flProduct;
+        public int [] flindex;
         public SLProduct(int index,int [] flProduct){
             this.index=index;
             this.flProduct=flProduct;
         }
     }
-    public void decode(int [] so){
-        if(!verify(so)){
+    public void decode(int [] fso,int []sso){
+        if(!verify(fso,sso)){
             System.out.println("solution does not meet the requirement");
             System.exit(-1);
         }
         clearArray(alreadyAdded);
-        int [] tempOrder=copyArray(order);
-        int [] curTime=new int[order.length];
+        int [] curTime=new int[florder.length];
+        decodeOneLayer(fso,curTime,florder);
+        int [] slCurTime=new int[slOrder.size()];
+        for(int i=0;i<slOrder.size();++i){
+            SLProduct tempslProduct=slOrder.get(i);
+            for(int j=0;j<tempslProduct.flindex.length;++j){
+                slCurTime[i]=Math.max(slCurTime[i],curTime[tempslProduct.flindex[j]]);
+            }
+        }
+        decodeOneLayer(sso,slCurTime,slorder);
+        for(int tempi=0;tempi<curTime.length;++tempi){
+            if(curTime[tempi]>flot[tempi]){
+                totalDelay+=curTime[tempi]-flot[tempi];
+            }
+        }
+        for(int tempi=0;tempi<slCurTime.length;++tempi){
+            if(curTime[tempi]>slot[tempi]){
+                totalDelay+=curTime[tempi]-slot[tempi];
+            }
+        }
+        maxFinished=0;
+        for(int item:curTime){
+            if(item>maxFinished)maxFinished=item;
+        }
+        for(int item:slCurTime){
+            if(item>maxFinished)maxFinished=item;
+        }
+        System.out.print("maxFinished:"+maxFinished);
+        System.out.print("        totalDelay:"+totalDelay);
+        System.out.println("        totalTime:"+totalTime);
+    }
+    private void decodeOneLayer(int [] so,int []curTime,int []curorder){
+        int [] tempOrder=copyArray(florder);
         for(int i=0;i<so.length;++i){
             int product=so[i];
             int indexOp=alreadyAdded[product]%numOfOperation[product];
@@ -145,8 +190,14 @@ public class MLDecoder {
             int machine=machineChoice.get(machineindex);
             int time=machineTime.get(product).get(indexOp).get(machineindex);
             totalTime+=time;
-            int orderIndex=findItemIndex(order,so[i]);
-            int max=Math.max(occupiedTime[machine],curTime[orderIndex]);
+            int orderIndex=findItemIndex(curorder,so[i]);
+            //try{
+                int max=Math.max(occupiedTime[machine],curTime[orderIndex]);
+            //}catch (Exception e){
+//                System.out.println("occupiedLen:"+occupiedTime.length+"   machine:"+machine);
+//                System.out.println("curTimeLen:"+curTime.length+"   orderIndex:"+machine);
+//            }
+
             occupiedTime[machine]=max+time;
             curTime[orderIndex]=max+time;
             alreadyAdded[so[i]]+=1;
@@ -155,18 +206,6 @@ public class MLDecoder {
             }
 
         }
-        for(int tempi=0;tempi<curTime.length;++tempi){
-            if(curTime[tempi]>orderTime[tempi]){
-                totalDelay+=curTime[tempi]-orderTime[tempi];
-            }
-        }
-        maxFinished=0;
-        for(int item:curTime){
-            if(item>maxFinished)maxFinished=item;
-        }
-        System.out.print("maxFinished:"+maxFinished);
-        System.out.print("        totalDelay:"+totalDelay);
-        System.out.println("        totalTime:"+totalTime);
     }
     private int chooseMachine(ArrayList<Integer> machineChoice){
         /**
@@ -197,10 +236,13 @@ public class MLDecoder {
         }
         return indexearly;
     }
-    public boolean verify(int []so){
+    public boolean verify(int []fso,int []sso){
         clearArray(alreadyAdded);
-        for(int i=0;i<so.length;++i){
-            alreadyAdded[so[i]]++;
+        for(int i=0;i<sso.length;++i){
+            alreadyAdded[sso[i]]++;
+        }
+        for(int i=0;i<fso.length;++i){
+            alreadyAdded[fso[i]]++;
         }
         for(int i=0;i<alreadyAdded.length;++i){
             if(alreadyAdded[i]!=numOfOperation[i]*sumOrder[i]){
@@ -251,23 +293,24 @@ public class MLDecoder {
         int numOfSolution=1000;
         String txt=new DataReader("example1.txt").read();
         MLDecoder decoder=new MLDecoder(txt);
-        int [] so={0,0,0,2,2,2,0,0,3,0,3,3,4,4,4,5,5,5};
-        decoder.decode(so);
-        int mtotalTime=decoder.totalTime;
-        int mfinished=decoder.maxFinished;
-        int mdelay=decoder.totalDelay;
-        for(int i=0;i<10000;++i){
-            for(int j=0;j<so.length;++j){
-                so=Operator.swap(so);
-                decoder.clearResult();
-                decoder.decode(so);
-                mdelay=Math.min(decoder.totalDelay,mdelay);
-                mfinished=Math.min(decoder.maxFinished,mfinished);
-                mtotalTime=Math.min(decoder.totalTime,mtotalTime);
-            }
-        }
-        System.out.print("mdeley:"+mdelay);
-        System.out.print("      mfinished:"+mfinished);
-        System.out.println("    mtotalTime: "+mtotalTime);
+        int [] fso={0,0,0,2,2,2,0,0,3,0,3,3,1,1,1,2,2,2,2,2,3,2,3,3};
+        int [] sso={4,4,4,5,5,5};
+        decoder.decode(fso,sso);
+//        int mtotalTime=decoder.totalTime;
+//        int mfinished=decoder.maxFinished;
+//        int mdelay=decoder.totalDelay;
+//        for(int i=0;i<10000;++i){
+//            for(int j=0;j<so.length;++j){
+//                so=Operator.swap(so);
+//                decoder.clearResult();
+//                decoder.decode(so);
+//                mdelay=Math.min(decoder.totalDelay,mdelay);
+//                mfinished=Math.min(decoder.maxFinished,mfinished);
+//                mtotalTime=Math.min(decoder.totalTime,mtotalTime);
+//            }
+//        }
+//        System.out.print("mdeley:"+mdelay);
+//        System.out.print("      mfinished:"+mfinished);
+//        System.out.println("    mtotalTime: "+mtotalTime);
     }
 }
