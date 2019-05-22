@@ -61,7 +61,7 @@ public class Operator {
         }
         return res;
     }
-    protected static int [] Integer2int(Integer [] array){
+    public static int [] Integer2int(Integer [] array){
         int [] res=new int[array.length];
         for(int i=0;i< array.length;++i){
             res[i]=array[i];

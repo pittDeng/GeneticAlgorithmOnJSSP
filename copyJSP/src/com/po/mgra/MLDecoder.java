@@ -18,7 +18,12 @@ public class MLDecoder {
     private int [] flexibility;
     private int[] order;
     private int[] orderTime;
+    private int [] florder;
+    private int [] flot;
+    private int [] slorder;
+    private int [] slot;
     private int[] sumOrder;
+    SLProduct [] slProduct;
     private int totalDelay;
     private int maxFinished;
     private int totalTime;
@@ -77,8 +82,53 @@ public class MLDecoder {
         for(int i=0;i<this.order.length;++i){
             this.sumOrder[this.order[i]]+=1;
         }
-    }
 
+        String [] secondlayer=getSubString(txt,arr.get(6),arr.get(7));
+        slProduct=new SLProduct[secondlayer.length-1];
+        for(int i=1;i<secondlayer.length;++i){
+            String [] temp=secondlayer[i].split(",");
+            int [] flProduct=new int [temp.length-1];
+            for(int j=0;j<flProduct.length;++j){
+                flProduct[j]=Integer.parseInt(temp[j]);
+            }
+            slProduct[i-1]=new SLProduct(Integer.parseInt(temp[temp.length-1]),flProduct);
+        }
+        ArrayList<Integer>temporder=new ArrayList<>();
+
+        ArrayList<Integer>tempot=new ArrayList<>();
+        ArrayList<Integer>slOrder=new ArrayList<>();
+        ArrayList<Integer>slOt=new ArrayList<>();
+        for(int i=0;i<order.length;++i){
+            boolean flag=true;
+            for(int j=0;j<slProduct.length;++j){
+                if(order[i]==slProduct[j].index){
+                    for(int item:slProduct[j].flProduct){
+                        temporder.add(item);
+                        tempot.add(Integer.MAX_VALUE);
+                    }
+                    slOrder.add(order[i]);
+                    slOt.add(orderTime[i]);
+                    flag=false;
+                }
+            }
+            if(flag){
+                temporder.add(order[i]);
+                tempot.add(orderTime[i]);
+            }
+        }
+        this.florder=Operator.Integer2int(temporder.toArray(new Integer[temporder.size()]));
+        this.flot=Operator.Integer2int(tempot.toArray(new Integer[tempot.size()]));
+        this.slorder=Operator.Integer2int(slOrder.toArray(new Integer[slOrder.size()]));
+        this.slot=Operator.Integer2int(slOt.toArray(new Integer[slOt.size()]));
+    }
+    private class SLProduct{
+        public int index;
+        public int [] flProduct;
+        public SLProduct(int index,int [] flProduct){
+            this.index=index;
+            this.flProduct=flProduct;
+        }
+    }
     public void decode(int [] so){
         if(!verify(so)){
             System.out.println("solution does not meet the requirement");
