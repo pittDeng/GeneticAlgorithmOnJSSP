@@ -1,5 +1,6 @@
 package com.po.mgra;
 
+import com.po.data.ToExcel;
 import com.po.general.Operator;
 
 import java.util.ArrayList;
@@ -296,21 +297,27 @@ public class MLDecoder {
         int [] fso={0,0,0,2,2,2,0,0,3,0,3,3,1,1,1,2,2,2,2,2,3,2,3,3};
         int [] sso={4,4,4,5,5,5};
         decoder.decode(fso,sso);
-//        int mtotalTime=decoder.totalTime;
-//        int mfinished=decoder.maxFinished;
-//        int mdelay=decoder.totalDelay;
-//        for(int i=0;i<10000;++i){
-//            for(int j=0;j<so.length;++j){
-//                so=Operator.swap(so);
-//                decoder.clearResult();
-//                decoder.decode(so);
-//                mdelay=Math.min(decoder.totalDelay,mdelay);
-//                mfinished=Math.min(decoder.maxFinished,mfinished);
-//                mtotalTime=Math.min(decoder.totalTime,mtotalTime);
-//            }
-//        }
-//        System.out.print("mdeley:"+mdelay);
-//        System.out.print("      mfinished:"+mfinished);
-//        System.out.println("    mtotalTime: "+mtotalTime);
+        ToExcel toExcel=new ToExcel("gra.xls","result");
+        int mtotalTime=decoder.totalTime;
+        int mfinished=decoder.maxFinished;
+        int mdelay=decoder.totalDelay;
+        for(int i=0;i<1000;++i){
+            int len=fso.length;
+            for(int j=0;j<fso.length;++j){
+                fso=Operator.swap(fso);
+                decoder.clearResult();
+                decoder.decode(fso,sso);
+                toExcel.insertData(i*len+j,0,decoder.maxFinished);
+                toExcel.insertData(i*len+j,1,decoder.totalDelay);
+                toExcel.insertData(i*len+j,2,decoder.totalTime);
+                mdelay=Math.min(decoder.totalDelay,mdelay);
+                mfinished=Math.min(decoder.maxFinished,mfinished);
+                mtotalTime=Math.min(decoder.totalTime,mtotalTime);
+            }
+        }
+        toExcel.save();
+        System.out.print("mdeley:"+mdelay);
+        System.out.print("      mfinished:"+mfinished);
+        System.out.println("    mtotalTime: "+mtotalTime);
     }
 }
