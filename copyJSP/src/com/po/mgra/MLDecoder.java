@@ -217,7 +217,7 @@ public class MLDecoder {
         ArrayList<Integer> early=new ArrayList<>();
         int earlyTime=occupiedTime[machineChoice.get(0)];
         early.add(0);
-        int indexearly=0;
+
         for(int j=1;j<machineChoice.size();++j){
             if(occupiedTime[machineChoice.get(j)]<earlyTime){
                 early.clear();
@@ -227,12 +227,12 @@ public class MLDecoder {
             else if(occupiedTime[machineChoice.get(j)]==early.get(0))
                 early.add(j);
         }
-
-        int minflex=flexibility[early.get(0)];
+        int indexearly=early.get(0);
+        int minflex=flexibility[machineChoice.get(early.get(0))];
         for(int tempi=1;tempi<early.size();++tempi){
-            if(flexibility[early.get(tempi)]<minflex){
-                indexearly=tempi;
-                minflex=flexibility[early.get(tempi)];
+            if(flexibility[machineChoice.get(early.get(tempi))]<minflex){
+                indexearly=early.get(tempi);
+                minflex=flexibility[machineChoice.get(early.get(tempi))];
             }
         }
         return indexearly;
@@ -292,24 +292,28 @@ public class MLDecoder {
     }
     public static void main(String [] args){
         int numOfSolution=1000;
-        String txt=new DataReader("example1.txt").read();
+        String txt=new DataReader("example11.txt").read();
         MLDecoder decoder=new MLDecoder(txt);
-        int [] fso={0,0,0,2,2,2,0,0,3,0,3,3,1,1,1,2,2,2,2,2,3,2,3,3};
-        int [] sso={4,4,4,5,5,5};
+        int [] fso={3,1,3,2,3,2,3,1,3,0,3,2,2,3,0,1,2,1,1,3,2,2,2,0,3,3,0,0,2,3,0,2,2,2,3,1};
+        int [] sso={5,4,5,6,4,5,4,6,5,5,6,5};
         decoder.decode(fso,sso);
-        ToExcel toExcel=new ToExcel("gra.xls","result");
+        ToExcel toExcel=new ToExcel("gra1.xls","result");
         int mtotalTime=decoder.totalTime;
         int mfinished=decoder.maxFinished;
         int mdelay=decoder.totalDelay;
         for(int i=0;i<1000;++i){
             int len=fso.length;
             for(int j=0;j<fso.length;++j){
+                int row=i*fso.length+j;
+                toExcel.insertData(row,0,decoder.maxFinished);
+                toExcel.insertData(row,1,decoder.totalDelay);
+                toExcel.insertData(row,2,decoder.totalTime);
+                double res=0.7*decoder.totalDelay+0.2*decoder.totalTime+0.1*decoder.maxFinished;
+                toExcel.insertDouble(row,3,res);
                 fso=Operator.swap(fso);
+                sso=Operator.swap(sso);
                 decoder.clearResult();
                 decoder.decode(fso,sso);
-                toExcel.insertData(i*len+j,0,decoder.maxFinished);
-                toExcel.insertData(i*len+j,1,decoder.totalDelay);
-                toExcel.insertData(i*len+j,2,decoder.totalTime);
                 mdelay=Math.min(decoder.totalDelay,mdelay);
                 mfinished=Math.min(decoder.maxFinished,mfinished);
                 mtotalTime=Math.min(decoder.totalTime,mtotalTime);

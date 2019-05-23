@@ -54,6 +54,14 @@ public class ToExcel {
         HSSFCell cell=row.createCell(columnIndex);
         cell.setCellValue(data);
     }
+    public void insertDouble(int rowIndex,int columnIndex,double data){
+        HSSFRow row=sheet.getRow(rowIndex);
+        if(row==null){
+            row=sheet.createRow(rowIndex);
+        }
+        HSSFCell cell=row.createCell(columnIndex);
+        cell.setCellValue(data);
+    }
     public void insertString(int rowIndex,int columnIndex,String data){
         HSSFRow row=sheet.getRow(rowIndex);
         if(row==null){
