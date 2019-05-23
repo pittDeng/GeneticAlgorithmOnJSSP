@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e3e1a51-8f60-439a-90b8-99e0f014fb0c" name="Default Changelist" comment="some updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JSP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/po/data/ToExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/data/ToExcel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,8 +35,7 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="copyJSP" />
@@ -48,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="298" column="32" lean-forward="true" selection-start-line="298" selection-start-column="32" selection-end-line="298" selection-end-column="32" />
+            <state relative-caret-position="240">
+              <caret line="293" column="31" lean-forward="true" selection-start-line="293" selection-start-column="31" selection-end-line="293" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,26 +55,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/po/data/ToExcel.java">
+        <entry file="file://$PROJECT_DIR$/example4.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="292">
+              <caret line="75" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/po/general/Chromosome.java">
+        <entry file="file://$PROJECT_DIR$/example3.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-              <folding>
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#678#679#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-2396">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -94,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/po/GA/Genetic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
+            <state relative-caret-position="14952">
               <caret line="361" column="17" selection-start-line="361" selection-start-column="17" selection-end-line="361" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -106,7 +96,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
+            <state relative-caret-position="1260">
               <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -118,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
+            <state relative-caret-position="1176">
               <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
             </state>
           </provider>
@@ -127,7 +117,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example11.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-123">
+            <state relative-caret-position="1050">
               <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
             </state>
           </provider>
@@ -247,7 +237,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-111" />
     <option name="width" value="1460" />
     <option name="height" value="920" />
@@ -476,7 +466,8 @@
       <workItem from="1558502140527" duration="4070000" />
       <workItem from="1558517575112" duration="2133000" />
       <workItem from="1558581826596" duration="710000" />
-      <workItem from="1558584923946" duration="6308000" />
+      <workItem from="1558584923946" duration="6555000" />
+      <workItem from="1558613079753" duration="1424000" />
     </task>
     <task id="LOCAL-00001" summary="some updates">
       <created>1554205667438</created>
@@ -510,7 +501,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273121000" />
+    <option name="totallyTimeSpent" value="274792000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -524,8 +515,8 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.792" visible="true" weight="0.3880484" />
-      <window_info id="Structure" order="1" sideWeight="0.208" side_tool="true" visible="true" weight="0.3880484" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7914438" visible="true" weight="0.39409986" />
+      <window_info id="Structure" order="1" sideWeight="0.20855615" side_tool="true" visible="true" weight="0.39409986" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -534,16 +525,16 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3852459" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38688526" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49928367" weight="0.33442622" />
+      <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49928367" weight="0.43934426" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32793522" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49928367" weight="0.32793522" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007163" side_tool="true" weight="0.48921832" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928367" weight="0.32793522" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928367" weight="0.32786885" />
       <window_info anchor="bottom" id="JProfiler" order="12" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -598,6 +589,12 @@
           <line>237</line>
           <properties />
           <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java</url>
+          <line>247</line>
+          <properties />
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -728,6 +725,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/data/ToExcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2226">
+          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/Chromosome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Genetic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14952">
+          <caret line="361" column="17" selection-start-line="361" selection-start-column="17" selection-end-line="361" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example11.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/po/general/OA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
@@ -745,72 +804,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example1.txt">
+    <entry file="file://$PROJECT_DIR$/example3.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        <state relative-caret-position="-2396">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/JSPOperator.java">
+    <entry file="file://$PROJECT_DIR$/example4.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/general/Chromosome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Genetic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="361" column="17" selection-start-line="361" selection-start-column="17" selection-end-line="361" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/GA/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/po/data/ToExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="63" column="5" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example11.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-123">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="292">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="298" column="32" lean-forward="true" selection-start-line="298" selection-start-column="32" selection-end-line="298" selection-end-column="32" />
+        <state relative-caret-position="240">
+          <caret line="293" column="31" lean-forward="true" selection-start-line="293" selection-start-column="31" selection-end-line="293" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
