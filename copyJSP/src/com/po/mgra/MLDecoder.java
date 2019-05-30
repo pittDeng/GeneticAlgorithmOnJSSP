@@ -252,6 +252,16 @@ public class MLDecoder {
         }
         return true;
     }
+    private int [] generateSo(int [] funcorder){
+        ArrayList<Integer>fso=new ArrayList<>();
+        for(int i=0;i<funcorder.length;++i){
+            for(int j=0;j<numOfOperation[funcorder[i]];++j){
+                fso.add(funcorder[i]);
+            }
+        }
+        return Operator.Integer2int(fso.toArray(new Integer[fso.size()] ));
+    }
+
     private static void clearArray(int [] array){
         for(int i=0;i<array.length;++i){
             array[i]=0;
@@ -292,12 +302,12 @@ public class MLDecoder {
     }
     public static void main(String [] args){
         int numOfSolution=1000;
-        String txt=new DataReader("example4.txt").read();
+        String txt=new DataReader("example4.1.txt").read();
         MLDecoder decoder=new MLDecoder(txt);
-        int [] fso={4,6,8,16,9,1,8,6,12,0,3,11,19,12,13,3,6,5,6,19,19,8,3,15,9,12,0,11,13,15,0,19,7,11,11,12,14,6,9,12,6,16,13,19,10,17,1,15,0,12,11,18,16,16,18,15,14,6,6,11,9,6,7,19,10,7,18,10,15,13,19,9,17,3,1,11,7,11,11,17,2,9,17,0,6,12,16,10,12,13,11,13,6,8,7,5,11,9,9,8,17,14,17,19,3,17,11,11,8,19,11,5,10,2,10,15,7,0,15,19,11,15,2,4,17,19,3,15,19,16,17,9,4,6,12};
-        int [] sso={28,27,25,27,28,26,27,26,29,28,25,28,28,25,29,25,28,26,26,25,29,26,29,29,25,26,29};
+        int [] fso=decoder.generateSo(decoder.florder);
+        int [] sso=decoder.generateSo(decoder.slorder);
         decoder.decode(fso,sso);
-        ToExcel toExcel=new ToExcel("gra4.xls","result");
+        ToExcel toExcel=new ToExcel("gra8.xls","result");
         int mtotalTime=decoder.totalTime;
         int mfinished=decoder.maxFinished;
         int mdelay=decoder.totalDelay;

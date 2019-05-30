@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="293" column="31" lean-forward="true" selection-start-line="293" selection-start-column="31" selection-end-line="293" selection-end-column="31" />
+            <state relative-caret-position="-57">
+              <caret line="305" column="21" selection-start-line="305" selection-start-column="21" selection-end-line="305" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -55,19 +55,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example4.txt">
+        <entry file="file://$PROJECT_DIR$/example2.1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="42">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example3.txt">
+        <entry file="file://$PROJECT_DIR$/example1.1.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2396">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+            <state relative-caret-position="-294">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -227,6 +227,8 @@
         <option value="$PROJECT_DIR$/src/com/po/general/Operator.java" />
         <option value="$PROJECT_DIR$/example1.txt" />
         <option value="$PROJECT_DIR$/src/com/po/data/ToExcel.java" />
+        <option value="$PROJECT_DIR$/example1.1.txt" />
+        <option value="$PROJECT_DIR$/example2.1.txt" />
         <option value="$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java" />
       </list>
     </option>
@@ -237,7 +239,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-111" />
     <option name="width" value="1460" />
     <option name="height" value="920" />
@@ -248,6 +250,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,7 +314,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,6 +326,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558532586291" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../poi-4.1.0.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -467,7 +472,8 @@
       <workItem from="1558517575112" duration="2133000" />
       <workItem from="1558581826596" duration="710000" />
       <workItem from="1558584923946" duration="6555000" />
-      <workItem from="1558613079753" duration="1424000" />
+      <workItem from="1558613079753" duration="1992000" />
+      <workItem from="1558705351921" duration="2716000" />
     </task>
     <task id="LOCAL-00001" summary="some updates">
       <created>1554205667438</created>
@@ -501,7 +507,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="274792000" />
+    <option name="totallyTimeSpent" value="278076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -515,8 +521,8 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7914438" visible="true" weight="0.39409986" />
-      <window_info id="Structure" order="1" sideWeight="0.20855615" side_tool="true" visible="true" weight="0.39409986" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7918033" visible="true" weight="0.40015128" />
+      <window_info id="Structure" order="1" sideWeight="0.20819671" side_tool="true" visible="true" weight="0.40015128" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -525,7 +531,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928476" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38688526" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38688526" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.49928367" weight="0.43934426" />
@@ -746,6 +752,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3150">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/po/GA/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -804,24 +824,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example3.txt">
+    <entry file="file://$PROJECT_DIR$/example1.1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2396">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        <state relative-caret-position="-294">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example4.txt">
+    <entry file="file://$PROJECT_DIR$/example2.1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="42">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/po/mgra/MLDecoder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="293" column="31" lean-forward="true" selection-start-line="293" selection-start-column="31" selection-end-line="293" selection-end-column="31" />
+        <state relative-caret-position="-57">
+          <caret line="305" column="21" selection-start-line="305" selection-start-column="21" selection-end-line="305" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
