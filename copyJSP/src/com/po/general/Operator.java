@@ -6,6 +6,7 @@ import com.po.Parameter;
 import java.util.*;
 
 public class Operator {
+    protected static int []alreadyAddNum;
     protected int cLength;
     protected static Random random=new Random();
     protected static Func func= Parameter.func;
@@ -135,6 +136,16 @@ public class Operator {
         c[pos2]=temp;
         return c;
     }
+    //通过染色体的长度来确定交换的次数
+    public static int [] swapByLength(int [] c)
+    {
+        c=copyArray(c);
+        for(int i=0;i<c.length;++i){
+            int [] pos=generateTwoDifferentInteger(c.length);
+            swap(c,pos[0],pos[1],false);
+        }
+        return c;
+    }
     public static int[] PathRelinking(int[] c1,int[] opt) {
         int [] copyc1=copyArray(c1);
         Vector<Integer> diff=getDiff(copyc1,opt);
@@ -196,6 +207,11 @@ public class Operator {
             --k;
         }
         return diff;
+    }
+    protected static void clearAlreadyAddNum(){
+        for(int i=0;i<alreadyAddNum.length;++i){
+            alreadyAddNum[i]=0;
+        }
     }
     public static int getDistance(int []c1,int[] c2){
         int res=0;
@@ -298,6 +314,40 @@ public class Operator {
         System.out.println(func.function(res));
     }
 
+
+    protected static int [] generateAllNegativeOffspring(int len){
+        int [] offspring=new int[len];
+        for(int i=0;i<len;++i){
+            offspring[i]=-1;
+        }
+        return offspring;
+    }
+    public static void fillRest(int [] offspring,int [] c1,int [] c2,int [] alreadyAddNum,int [] sumSo){
+        int k=0;
+        for(int i=0;i<c1.length;++i){
+            if(offspring[i]==c1[i])
+                continue;
+            else{
+                while(alreadyAddNum[c2[k]]>=sumSo[c2[k]])k++;
+                offspring[i]=c2[k];
+                ++alreadyAddNum[c2[k]];
+                ++k;
+            }
+        }
+    }
+    public static void fillRest(int [] offspring,int [] c1,int [] c2,int [] alreadyAddNum,int sumSo){
+        int k=0;
+        for(int i=0;i<c1.length;++i){
+            if(offspring[i]==c1[i])
+                continue;
+            else{
+                while(alreadyAddNum[c2[k]]>=sumSo)k++;
+                offspring[i]=c2[k];
+                ++alreadyAddNum[c2[k]];
+                ++k;
+            }
+        }
+    }
     public static void main(String [] args){
         testLs2();
     }

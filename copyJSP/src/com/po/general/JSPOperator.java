@@ -4,14 +4,13 @@ import com.po.Code;
 import java.util.*;
 
 public class JSPOperator extends Operator{
-    protected static int []alreadyAddNum;
     private int OperationForEachJob;
     private int JobNum;
     public JSPOperator (int cLength,int JobNum,int OperationForEachJob,Func func){
         super(cLength,func);
         this.OperationForEachJob=OperationForEachJob;
         this.JobNum=JobNum;
-        alreadyAddNum=new int[JobNum];
+        alreadyAddNum=new int[this.JobNum];
         if(cLength<5){
             System.out.println("染色体长度必须大于4");
             System.exit(0);
@@ -26,31 +25,11 @@ public class JSPOperator extends Operator{
                 ++alreadyAddNum[c1[i]];
             }
         }
-        int k=0;
-        for(int i=0;i<c1.length;++i){
-            if(offspring[i]==c1[i])
-                continue;
-            else{
-                while(alreadyAddNum[c2[k]]>=OperationForEachJob)k++;
-                offspring[i]=c2[k];
-                ++alreadyAddNum[c2[k]];
-                ++k;
-            }
-        }
+        Operator.fillRest(offspring,c1,c2,alreadyAddNum,OperationForEachJob);
         return offspring;
     }
-    protected static int [] generateAllNegativeOffspring(int len){
-        int [] offspring=new int[len];
-        for(int i=0;i<len;++i){
-            offspring[i]=-1;
-        }
-        return offspring;
-    }
-    protected static void clearAlreadyAddNum(){
-        for(int i=0;i<alreadyAddNum.length;++i){
-            alreadyAddNum[i]=0;
-        }
-    }
+
+
 
 //    protected int [] findLocationBetween(int []c,int[] rsequence){
 //        int [] loc=new int[c.length];

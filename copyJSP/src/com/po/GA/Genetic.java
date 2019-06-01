@@ -2,6 +2,7 @@ package com.po.GA;
 
 import com.po.Code;
 import com.po.Parameter;
+import com.po.general.Operator;
 
 import java.util.Random;
 
@@ -357,15 +358,7 @@ public class Genetic {
 
         }
         int k=0;
-        for(int i=0;i<offspring.length;++i){
-            if(offspring[i]==so1[i])continue;
-            else{
-                while(alreadyAddNum[so2[k]]>=jobForEachWorkPiece)k++;
-                offspring[i]=so2[k];
-                ++alreadyAddNum[so2[k]];
-                ++k;
-            }
-        }
+        Operator.fillRest(offspring,so1,so2,alreadyAddNum,jobForEachWorkPiece);
         return offspring;
     }
     private void setMinimumFinishedTime(){
