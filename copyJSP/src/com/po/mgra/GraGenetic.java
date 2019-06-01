@@ -2,8 +2,8 @@ package com.po.mgra;
 
 import com.po.general.Operator;
 import com.po.general.Solution;
-
 import java.util.Random;
+
 
 public class GraGenetic {
     private int popSize;
@@ -47,7 +47,7 @@ public class GraGenetic {
         }
     }
     private int choose(){
-        for(int i=0;i<solutions.length;++i){
+        for(int i=GraParameter.alwaysSave;i<solutions.length;++i){
             if(random.nextDouble()>solutions[i].poss)
                 solutions[i].isLived=false;
         }
@@ -108,5 +108,4 @@ public class GraGenetic {
     public static void main(String [] args){
         test();
     }
-
 }

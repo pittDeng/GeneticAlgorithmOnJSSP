@@ -310,12 +310,12 @@ public class MLDecoder {
     }
     public static void main(String [] args){
         int numOfSolution=1000;
-        String txt=new DataReader("example4.1.txt").read();
+        String txt=new DataReader("example1.txt").read();
         MLDecoder decoder=new MLDecoder(txt);
         int [] fso=decoder.generateSo(decoder.florder);
         int [] sso=decoder.generateSo(decoder.slorder);
         decoder.decode(fso,sso);
-        ToExcel toExcel=new ToExcel("gra8.xls","result");
+        ToExcel toExcel=new ToExcel("gra1.xls","result");
         int mtotalTime=decoder.totalTime;
         int mfinished=decoder.maxFinished;
         int mdelay=decoder.totalDelay;
