@@ -157,11 +157,18 @@ public class MLDecoder {
         int [] curTime=new int[florder.length];
         decodeOneLayer(fso,curTime,florder);
         int [] slCurTime=new int[slOrder.size()];
-        for(int i=0;i<slOrder.size();++i){
-            SLProduct tempslProduct=slOrder.get(i);
-            for(int j=0;j<tempslProduct.flindex.length;++j){
-                slCurTime[i]=Math.max(slCurTime[i],curTime[tempslProduct.flindex[j]]);
-            }
+//        for(int i=0;i<slOrder.size();++i){
+//            SLProduct tempslProduct=slOrder.get(i);
+//            for(int j=0;j<tempslProduct.flindex.length;++j){
+//                slCurTime[i]=Math.max(slCurTime[i],curTime[tempslProduct.flindex[j]]);
+//            }
+//        }
+        int tempmax=0;
+        for(int i=0;i<curTime.length;++i){
+            tempmax=Math.max(tempmax,curTime[i]);
+        }
+        for(int i=0;i<slCurTime.length;++i){
+            slCurTime[i]=tempmax;
         }
         decodeOneLayer(sso,slCurTime,slorder);
         for(int tempi=0;tempi<curTime.length;++tempi){
@@ -170,8 +177,8 @@ public class MLDecoder {
             }
         }
         for(int tempi=0;tempi<slCurTime.length;++tempi){
-            if(curTime[tempi]>slot[tempi]){
-                totalDelay+=curTime[tempi]-slot[tempi];
+            if(slCurTime[tempi]>slot[tempi]){
+                totalDelay+=slCurTime[tempi]-slot[tempi];
             }
         }
         maxFinished=0;
@@ -190,7 +197,7 @@ public class MLDecoder {
         return 0.7*this.totalDelay+0.2*this.totalTime+0.1*this.maxFinished;
     }
     private void decodeOneLayer(int [] so,int []curTime,int []curorder){
-        int [] tempOrder=copyArray(florder);
+        int [] tempOrder=copyArray(curorder);
         for(int i=0;i<so.length;++i){
             int product=so[i];
             int indexOp=alreadyAdded[product]%numOfOperation[product];
@@ -199,21 +206,19 @@ public class MLDecoder {
             int machine=machineChoice.get(machineindex);
             int time=machineTime.get(product).get(indexOp).get(machineindex);
             totalTime+=time;
-            int orderIndex=findItemIndex(curorder,so[i]);
+            int orderIndex=findItemIndex(tempOrder,so[i]);
             //try{
                 int max=Math.max(occupiedTime[machine],curTime[orderIndex]);
             //}catch (Exception e){
 //                System.out.println("occupiedLen:"+occupiedTime.length+"   machine:"+machine);
 //                System.out.println("curTimeLen:"+curTime.length+"   orderIndex:"+machine);
 //            }
-
             occupiedTime[machine]=max+time;
             curTime[orderIndex]=max+time;
             alreadyAdded[so[i]]+=1;
             if(alreadyAdded[so[i]]%numOfOperation[so[i]]==0){
                 tempOrder[orderIndex]=-1;
             }
-
         }
     }
     private int chooseMachine(ArrayList<Integer> machineChoice){

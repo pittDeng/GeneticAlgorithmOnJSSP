@@ -104,14 +104,14 @@ public class GraGenetic {
         }
     }
     public static void test(int i,ToExcel toExcel){
-        GraGenetic graGenetic=new GraGenetic(50,1000,0.5,0.8);
+        GraGenetic graGenetic=new GraGenetic(50,2000,0.5,0.8);
         graGenetic.go();
         toExcel.insertDouble(i,0,graGenetic.solutions[0].fitnessValue);
     }
     public static void main(String [] args){
         for(int index=1;index<=4;++index){
-            filePath=String.format("example%d.1.txt",index);
-            ToExcel toExcel=new ToExcel(GraParameter.excelName,"index"+(index+4));
+            filePath=String.format("example%d.txt",index);
+            ToExcel toExcel=new ToExcel(GraParameter.excelName,"index"+index);
             int times=20;
             for(int i=0;i<times;++i){
                 test(i,toExcel);
