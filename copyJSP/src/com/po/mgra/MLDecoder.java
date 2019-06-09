@@ -157,19 +157,19 @@ public class MLDecoder {
         int [] curTime=new int[florder.length];
         decodeOneLayer(fso,curTime,florder);
         int [] slCurTime=new int[slOrder.size()];
-//        for(int i=0;i<slOrder.size();++i){
-//            SLProduct tempslProduct=slOrder.get(i);
-//            for(int j=0;j<tempslProduct.flindex.length;++j){
-//                slCurTime[i]=Math.max(slCurTime[i],curTime[tempslProduct.flindex[j]]);
-//            }
+        for(int i=0;i<slOrder.size();++i){
+            SLProduct tempslProduct=slOrder.get(i);
+            for(int j=0;j<tempslProduct.flindex.length;++j){
+                slCurTime[i]=Math.max(slCurTime[i],curTime[tempslProduct.flindex[j]]);
+            }
+        }
+//        int tempmax=0;
+//        for(int i=0;i<curTime.length;++i){
+//            tempmax=Math.max(tempmax,curTime[i]);
 //        }
-        int tempmax=0;
-        for(int i=0;i<curTime.length;++i){
-            tempmax=Math.max(tempmax,curTime[i]);
-        }
-        for(int i=0;i<slCurTime.length;++i){
-            slCurTime[i]=tempmax;
-        }
+//        for(int i=0;i<slCurTime.length;++i){
+//            slCurTime[i]=tempmax;
+//        }
         decodeOneLayer(sso,slCurTime,slorder);
         for(int tempi=0;tempi<curTime.length;++tempi){
             if(curTime[tempi]>flot[tempi]){
