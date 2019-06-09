@@ -1,5 +1,6 @@
 package com.po.mgra;
 
+import com.po.data.ToExcel;
 import com.po.general.Operator;
 import com.po.general.Solution;
 import java.util.Random;
@@ -14,12 +15,13 @@ public class GraGenetic {
     public GraSolution [] solutions=null;
     public Random random=new Random();
     public GraOperator graOperator=null;
+    public static String filePath="";
     public GraGenetic(int popSize,int iterNum,double mutationPoss,double pbxPoss){
         this.popSize=popSize;
         this.iterNum=iterNum;
         this.mutationPoss=mutationPoss;
         this.pbxPoss=pbxPoss;
-        String txt=new DataReader(GraParameter.filePath).read();
+        String txt=new DataReader(filePath).read();
         MLDecoder decoder=new MLDecoder(txt);
         this.decoder=decoder;
         int [] fso=decoder.generateSo(decoder.florder);
@@ -101,11 +103,20 @@ public class GraGenetic {
             return so1.fitnessValue<=so2.fitnessValue;
         }
     }
-    public static void test(){
-        GraGenetic graGenetic=new GraGenetic(50,10000,0.5,0.8);
+    public static void test(int i,ToExcel toExcel){
+        GraGenetic graGenetic=new GraGenetic(50,1000,0.5,0.8);
         graGenetic.go();
+        toExcel.insertDouble(i,0,graGenetic.solutions[0].fitnessValue);
     }
     public static void main(String [] args){
-        test();
+        for(int index=1;index<=4;++index){
+            filePath=String.format("example%d.1.txt",index);
+            ToExcel toExcel=new ToExcel(GraParameter.excelName,"index"+(index+4));
+            int times=20;
+            for(int i=0;i<times;++i){
+                test(i,toExcel);
+                toExcel.save();
+            }
+        }
     }
 }
