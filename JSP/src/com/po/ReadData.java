@@ -1,7 +1,6 @@
 package com.po;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class ReadData {
     private String txt="";
