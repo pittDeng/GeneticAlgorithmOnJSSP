@@ -2,26 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e3e1a51-8f60-439a-90b8-99e0f014fb0c" name="Default Changelist" comment="some updates">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/po/MachineInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/God.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/God1.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JSPdata" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/JSPdata.xls" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Code.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/Code.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Function.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Function.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Genetic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Genetic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Solution.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Parameter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/Parameter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft10.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Code.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Function.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Genetic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/GA/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/Parameter.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/ReadData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/ReadData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/data/ToExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/data/ToExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Chromosome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/Chromosome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Compare.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/Compare.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Func.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/Func.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/JSPOperator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/JSPOperator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/OA.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/OA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Operator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/general/Operator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/JSPChromosome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/JSPChromosome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/data/ToExcel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Chromosome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Compare.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Func.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/JSPOperator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/OA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/general/Operator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/JSPChromosome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JSP/com/po/wwo/WWO.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/po/ReadData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/po/ReadData.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,31 +149,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.WWO">
-    <configuration name="JSPOperator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.po.general.JSPOperator" />
+  <component name="RunManager" selected="Application.ReadData">
+    <configuration name="ReadData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.po.ReadData" />
       <module name="JSP" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.po.general.*" />
+          <option name="PATTERN" value="com.po.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Operator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.po.general.Operator" />
-      <module name="JSP" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.po.general.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
     <configuration name="Temp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -183,6 +174,19 @@
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Temp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.po.Temp" />
+      <module name="JSP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.po.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="MakeNoErrorCheck" enabled="true" />
       </method>
     </configuration>
     <configuration name="ToExcel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -212,19 +216,18 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.JSPOperator" />
-      <item itemvalue="Application.Operator" />
       <item itemvalue="Application.WWO" />
       <item itemvalue="Application.Temp" />
       <item itemvalue="Application.ToExcel" />
+      <item itemvalue="Application.ReadData" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ReadData" />
+        <item itemvalue="Application.Temp" />
         <item itemvalue="Application.WWO" />
         <item itemvalue="Application.ToExcel" />
         <item itemvalue="Application.Temp" />
-        <item itemvalue="Application.Operator" />
-        <item itemvalue="Application.JSPOperator" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +265,7 @@
       <workItem from="1554709538015" duration="15680000" />
       <workItem from="1554772286131" duration="30559000" />
       <workItem from="1554858071240" duration="17544000" />
-      <workItem from="1564992565338" duration="1542000" />
+      <workItem from="1564992565338" duration="14119000" />
     </task>
     <task id="LOCAL-00001" summary="some updates">
       <created>1554205667438</created>
@@ -327,23 +330,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/po/ReadData.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/po/GA/Genetic.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/po/general/Operator.java</url>
-          <line>290</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/po/general/OA.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="26" />
+          <line>94</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -353,14 +341,5 @@
         <watch expression="alreadyAddNum" language="JAVA" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="watch">
-      <expression>
-        <expression-string>alreadyAddNum</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>
