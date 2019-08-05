@@ -42,6 +42,7 @@ public class Code {
         return length;
     }
 
+
     public static int getWorkpieceNum() {
         return workpieceNum;
     }
@@ -111,7 +112,9 @@ public class Code {
         //对于遍历的每一个所用时间为itemTime;
         int itemTime=0;
         for(int i=0;i<solution.length;++i){
+            //System.out.println("product"+solution[i]+"job"+alreadyAddNum[solution[i]]);
             machineNum=assignMatrix[solution[i]][alreadyAddNum[solution[i]]];
+
             itemTime=timeMatrix[solution[i]][alreadyAddNum[solution[i]]];
             if(lastFinishedTime[solution[i]]>machineTime[machineNum]){
                 machineTime[machineNum]=lastFinishedTime[solution[i]]+itemTime;
